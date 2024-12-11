@@ -1,0 +1,77 @@
+https://github.com/Hexlet/ru-test-assignments/blob/main/QA/Test%20task%20Purrweb.md
+
+1. План тестирования
+
+1) Что проверять
+Сайт Signaturely - это сервис для электронной подписи документов. Важно проверить самые базовые разделы сайта, а именно:
+- раздел "Sign"
+- раздел "Documents"
+- раздел "Templates"
+- раздел "Forms"
+- раздел "Team"
+- раздел "Integrations"
+- раздел "Settings"
+- раздел "Try now"
+
+2) Как проверять
+Проверять необходимо методом функционального тестирования, используя основные виды браузеров (Google Chrome, Mozilla Firefox, Opera). Также следует использовать позитивные и негативные сценарии для проверки. В дополнение необходимо проверить работу всех разделов сайта через мобильную версию. 
+
+3) Когда проверять
+Важно грамотно расставить приоритет проверок. Самые важные разделы сайта - это "Documents", "Templates" и "Form". Их нужно протестировать в первую очередь, а затем уже все оставшиеся разделы.
+
+
+2. Чек-лист проверок для страницы /documents
+- Проверка выбора "Documents", "Signers" и "Creators"
+- Проверка поиска по "Documents", "Signers" и "Creators"
+- Проверка выбора статуса 
+- Проверка выбора даты
+- Проверка создания папки
+- Проверка создания документа
+
+3. Баг-репорты
+Багов на сайтенайдено не было, добавляю баг-репорты из учебных проектов:
+
+- summary: |
+    Не работает возможность искать товары по ключевому слову
+  environment: |
+    Google Chrome Версия 128.0.6613.85 (Официальная сборка) (64 бит)
+    OC Windows 10 22H2, сборка 19045.4780
+  steps-to-reproduce: |
+    1. Зайти на главную страницу магазина https://hexlet-products-store.vercel.app/
+    2. Вбить в поисковую строку ключевое слово, например "milk"
+  expected-result: |
+    На главной странице отобразятся все товары по ключевому слову
+  actual-result: |
+    На главной странице отображается сообщение "Nothing found!"
+    Ошибка изображена на скриншоте screen1.jpg
+
+- summary: |
+    После оформления заказа отсутствует переход на страницу оплаты
+  environment: |
+    Google Chrome Версия 128.0.6613.85 (Официальная сборка) (64 бит)
+    OC Windows 10 22H2, сборка 19045.4780
+  steps-to-reproduce: |
+    1. Зайти на главную страницу магазина https://hexlet-products-store.vercel.app/
+    2. Нажать на кнопку "Add to cart"
+    3. Нажать на кнопку "Cart"
+    4. Нажать на кнопку "Checkout"
+  expected-result: |
+    Должен произойти переход на страницу оплаты 
+  actual-result: |
+    Переход на страницу оплаты не происходит
+    Ошибка изображена на скриншоте screen11.jpg
+
+  Summary:
+    Windows 10 Pro, Version 10.0.19045, assembly 19045
+    Google Chrome, Version 130.0.6723.92
+    Codebattle, Version ddf1389
+    Same bug goes with mobile version as well.
+  Reproduction steps:
+    1. Go to main page of the game https://codebattle.hexlet.io/#lobby
+    2. Click on nickname button
+    3. Click on "Tasks" button
+    4. Click on "Create new task" button
+  Expected result:
+    Detailed information about creating a new task should be displayed.
+  Actual result:
+    Empty page is shown.
